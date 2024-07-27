@@ -1,10 +1,8 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ringo/_base/widgets/base_stateful_widget.dart';
 import 'package:ringo/res/assets_paths.dart';
-import 'package:ringo/res/const_colors.dart';
+import 'package:ringo/ui/screens/home/home_screen.dart';
 import 'package:ringo/ui/screens/login/bloc/login_bloc.dart';
 import 'package:ringo/ui/widgets/login/account_login_by_type.dart';
 import 'package:ringo/ui/widgets/login/accounts_login_title.dart';
@@ -65,7 +63,7 @@ class _LoginScreenState extends BaseState<LoginScreen> {
           showToast("Forgot password pressed");
         }
         if (state is LoginSuccessState) {
-          showToast("Login pressed");
+          Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
         }
         if (state is ContinueWithGoogleState) {
           showToast("Continue with google pressed");
