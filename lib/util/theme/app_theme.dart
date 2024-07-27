@@ -9,7 +9,7 @@ class AppTheme {
   ThemeData get themeDataLight {
     return ThemeData(
         primarySwatch: ConstColors.primarySwatch,
-        fontFamily: 'Cairo',
+        fontFamily: 'Urbanist',
         useMaterial3: false,
         scaffoldBackgroundColor: ConstColors.white);
   }

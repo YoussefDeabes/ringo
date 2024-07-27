@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 class ConstColors {
 
   static final MaterialColor primarySwatch = generateMaterialColors(app);
-  static const Color appBackgroundColor = Color(0xFF0E4C9A);
-  static const Color selectedTabBackgroundColor = Color(0xFF0f4c9d);
-  static const Color appBarBackgroundColor = Color(0xFF0f4c9d);
-  static const Color app = Color(0xFF0f4c9d);
+  static const Color appBackgroundColor = Color(0xFF191D2B);
+  static const Color selectedTabBackgroundColor = Color(0xFF191D2B);
+  static const Color appBarBackgroundColor = Color(0xFF191D2B);
+  static const Color app = Color(0xFF191D2B);
   static const Color scaffoldBackground = Color(0xFFF8FCFF);
   static const Color appBarTextColor = Color(0xFFFFFFFF);
-  static const Color lightPrimaryColor = Color(0xFF0f4c9d);
-  static const Color shadowColor = Color(0x290f4c9d);
+  static const Color lightPrimaryColor = Color(0xFF191D2B);
+  static const Color shadowColor = Color(0xFFE8EAEE);
   static const Color textFieldtitleColor = Color(0xFF808080);
   static const Color textFieldColor = Color(0xFFd7dee7);
   static const Color unSelectedTabBackgroundColor = secondaryText;
@@ -22,8 +22,8 @@ class ConstColors {
   static const Color grey = Color(0xFFaab0bb);
   static const Color deepGrey = Color(0xFF666666);
 
-  static const Color text = Color(0xFF2B2C2C);
-  static const Color secondaryText = Color(0xFF7A7A7A);
+  static const Color text = Color(0xFF191D2B);
+  static const Color secondaryText = Color(0xFF96A0B5);
   static const Color textDisabled = Color(0xFFE0E0E0);
   static const Color disabled = Color(0xFFE0E0E0);
   static const Color secondary = Color(0xFF43BB9A);
@@ -33,7 +33,7 @@ class ConstColors {
   static const Color greyLight = Color(0xFFF5F5F5);
   static const Color listTile = Color(0xFFF9F9F9);
   static const Color error = Color(0xFFC54127);
-  static const Color loginColor = Color(0xFF3120E0);
+  static const Color loginColor = Color(0xFF191D2B);
   static const Color red = Color(0xFFC54127);
   static const Color toastColors = Color(0xFFFFCF96);
   static const Color white = Colors.white;

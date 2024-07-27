@@ -1,0 +1,16 @@
+{
+  "appName": "Ringo",
+  "login": "Login",
+  "signInToYourAccount": "Sign in to your account",
+  "username": "Username / Email",
+  "password": "Password",
+  "enterEmail": "Enter Username or Email here",
+  "enterPassword": "Enter password here",
+  "forgotPassword": "Forgot password ?",
+  "loginWithAccount": "Or login with account",
+  "continueWithGoogle": "Continue with Google",
+  "continueWithFacebook": "Continue with Facebook",
+  "continueWithApple": "Continue with Apple",
+  "doNotHaveAccount": "Don’t have an account? ",
+  "registerHere": "Register Here"
+}
