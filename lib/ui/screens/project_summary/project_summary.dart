@@ -36,78 +36,11 @@ class _ProjectSummaryState extends BaseState<ProjectSummary> {
                       color: ConstColors.text),
                 ),
                 SizedBox(height: height * 0.01),
-                TextField(
-                  style: const TextStyle(
-                      color: ConstColors.text,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16),
-                  decoration: InputDecoration(
-                      hintText: translate(LangKeys.searchProject),
-                      hintStyle: const TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
-                          color: ConstColors.secondaryText),
-                      suffixIcon: IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          AssPaths.searchNormal,
-                        ),
-                      )),
-                ),
+                _getSearchTextField(),
                 SizedBox(height: height * 0.03),
-                StaggeredGrid.count(
-                  crossAxisCount: 3,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  children: [
-                    _getProjectStatusCard("10", AssPaths.inProgress,
-                        translate(LangKeys.inProgress), const [
-                      Color(0xFF5EACE4),
-                      Color(0xFF3A9ADE),
-                      Color(0xFF5EACE4)
-                    ]),
-                    _getProjectStatusCard("24", AssPaths.completed,
-                        translate(LangKeys.completed), const [
-                      Color(0xFF58B2B4),
-                      Color(0xFF3F8B8D),
-                      Color(0xFF58B2B4)
-                    ]),
-                    _getProjectStatusCard("5", AssPaths.cancelled,
-                        translate(LangKeys.canceled), const [
-                      Color(0xFFE87777),
-                      Color(0xFFDD4A4A),
-                      Color(0xFFE87777)
-                    ]),
-                  ],
-                ),
+                _getProjectStatusGrid(),
                 SizedBox(height: height * 0.03),
-                Center(
-                  child: SizedBox(
-                      width: width * 0.90,
-                      height: height * 0.06,
-                      child: ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(8)),
-                        child: ElevatedButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                                backgroundColor: WidgetStateProperty.all(
-                                    ConstColors.scaffoldBackground),
-                                shape: WidgetStateProperty.all(
-                                    RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(8),
-                                        side: const BorderSide(
-                                            width: 2,
-                                            color: ConstColors.app)))),
-                            child: Text(
-                              translate(LangKeys.viewAllProjects),
-                              style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
-                                  color: ConstColors.app),
-                            )),
-                      )),
-                ),
+                _getViewAllProjectsButton(),
               ],
             ),
           ),
@@ -121,6 +54,81 @@ class _ProjectSummaryState extends BaseState<ProjectSummary> {
           ),
         ],
       ),
+    );
+  }
+
+///////////////////////////////////////////////////////////
+//////////////////// Widget methods ///////////////////////
+///////////////////////////////////////////////////////////
+
+  Widget _getSearchTextField() {
+    return TextField(
+      style: const TextStyle(
+          color: ConstColors.text, fontWeight: FontWeight.w600, fontSize: 16),
+      decoration: InputDecoration(
+          hintText: translate(LangKeys.searchProject),
+          hintStyle: const TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: ConstColors.secondaryText),
+          suffixIcon: IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset(
+              AssPaths.searchNormal,
+            ),
+          )),
+    );
+  }
+
+  Widget _getViewAllProjectsButton() {
+    return Center(
+      child: SizedBox(
+          width: width * 0.90,
+          height: height * 0.06,
+          child: ClipRRect(
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+            child: ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                    backgroundColor:
+                        WidgetStateProperty.all(ConstColors.scaffoldBackground),
+                    shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        side: const BorderSide(
+                            width: 2, color: ConstColors.app)))),
+                child: Text(
+                  translate(LangKeys.viewAllProjects),
+                  style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      color: ConstColors.app),
+                )),
+          )),
+    );
+  }
+
+  Widget _getProjectStatusGrid() {
+    return StaggeredGrid.count(
+      crossAxisCount: 3,
+      mainAxisSpacing: 10,
+      crossAxisSpacing: 10,
+      children: [
+        _getProjectStatusCard(
+            "10",
+            AssPaths.inProgress,
+            translate(LangKeys.inProgress),
+            const [Color(0xFF5EACE4), Color(0xFF3A9ADE), Color(0xFF5EACE4)]),
+        _getProjectStatusCard(
+            "24",
+            AssPaths.completed,
+            translate(LangKeys.completed),
+            const [Color(0xFF58B2B4), Color(0xFF3F8B8D), Color(0xFF58B2B4)]),
+        _getProjectStatusCard(
+            "5",
+            AssPaths.cancelled,
+            translate(LangKeys.canceled),
+            const [Color(0xFFE87777), Color(0xFFDD4A4A), Color(0xFFE87777)]),
+      ],
     );
   }
 
