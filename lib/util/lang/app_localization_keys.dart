@@ -13,4 +13,22 @@ class LangKeys {
   static const continueWithApple = 'continueWithApple';
   static const doNotHaveAccount = 'doNotHaveAccount';
   static const registerHere = 'registerHere';
+  static const jan = 'jan';
+  static const feb = 'feb';
+  static const mar = 'mar';
+  static const apr = 'apr';
+  static const may = 'may';
+  static const jun = 'jun';
+  static const search = 'search';
+  static const searchProject = 'searchProject';
+  static const viewAllProjects = 'viewAllProjects';
+  static const productivity = 'productivity';
+  static const inProgress = 'inProgress';
+  static const completed = 'completed';
+  static const canceled = 'canceled';
+  static const project = 'project';
+  static const projectSummary = 'projectSummary';
+  static const calendar = 'calendar';
+  static const category = 'category';
+  static const profile = 'profile';
 }

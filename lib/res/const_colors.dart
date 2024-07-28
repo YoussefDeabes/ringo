@@ -5,38 +5,24 @@ import 'package:flutter/material.dart';
 class ConstColors {
 
   static final MaterialColor primarySwatch = generateMaterialColors(app);
-  static const Color appBackgroundColor = Color(0xFF191D2B);
-  static const Color selectedTabBackgroundColor = Color(0xFF191D2B);
-  static const Color appBarBackgroundColor = Color(0xFF191D2B);
   static const Color app = Color(0xFF191D2B);
-  static const Color scaffoldBackground = Color(0xFFF8FCFF);
-  static const Color appBarTextColor = Color(0xFFFFFFFF);
-  static const Color lightPrimaryColor = Color(0xFF191D2B);
+  static const Color scaffoldBackground = Color(0xFFF3F3F3);
   static const Color shadowColor = Color(0xFFE8EAEE);
-  static const Color textFieldtitleColor = Color(0xFF808080);
-  static const Color textFieldColor = Color(0xFFd7dee7);
-  static const Color unSelectedTabBackgroundColor = secondaryText;
-  static const Color appGreen = Color(0xFF43bb9a);
-  static const Color appRed = Color(0xFFbb4343);
-  static const Color subTitleTextColor = Color(0xFF505050);
-  static const Color grey = Color(0xFFaab0bb);
-  static const Color deepGrey = Color(0xFF666666);
+  static const Color blue = Color(0xFF5599F5);
+  static const Color orange = Color(0xFFFD7722);
+  static const Color pink = Color(0xFFE84C88);
+  static const Color green = Color(0xFF5ECEB3);
+  static const Color purple = Color(0xFFD08CDF);
+  static const Color grey = Color(0x191C2A1F);
+  static const Color white = Colors.white;
 
   static const Color text = Color(0xFF191D2B);
   static const Color secondaryText = Color(0xFF96A0B5);
   static const Color textDisabled = Color(0xFFE0E0E0);
   static const Color disabled = Color(0xFFE0E0E0);
-  static const Color secondary = Color(0xFF43BB9A);
   static const Color accent = Color(0xFF7FCED6);
-  static const accentColor = Color(0xffF0E9D8);
-  static const Color lightShade = Color(0xFFF8FCFF);
   static const Color greyLight = Color(0xFFF5F5F5);
-  static const Color listTile = Color(0xFFF9F9F9);
-  static const Color error = Color(0xFFC54127);
-  static const Color loginColor = Color(0xFF191D2B);
-  static const Color red = Color(0xFFC54127);
-  static const Color toastColors = Color(0xFFFFCF96);
-  static const Color white = Colors.white;
+
 }
 
 MaterialColor generateMaterialColors(Color color) {

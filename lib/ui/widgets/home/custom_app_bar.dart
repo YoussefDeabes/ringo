@@ -21,7 +21,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0.3,
-      backgroundColor: ConstColors.white,
+      backgroundColor: ConstColors.scaffoldBackground,
       centerTitle: false,
       toolbarHeight: widget.height * 0.1,
       leading: Transform.scale(

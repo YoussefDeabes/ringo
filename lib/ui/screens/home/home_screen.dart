@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ringo/_base/widgets/base_stateful_widget.dart';
 import 'package:ringo/res/const_colors.dart';
 import 'package:ringo/ui/screens/home/bloc/home_bloc.dart';
+import 'package:ringo/ui/screens/project_summary/project_summary.dart';
 import 'package:ringo/ui/widgets/home/add_floating_action_button.dart';
 import 'package:ringo/ui/widgets/home/bottom_navigation_bar.dart';
 import 'package:ringo/ui/widgets/home/custom_app_bar.dart';
@@ -48,19 +49,26 @@ class _HomeScreenState extends BaseState<HomeScreen>
         }
       },
       builder: (context, state) {
-        return Scaffold(
-          appBar: CustomAppBar(height: height),
-          floatingActionButton: AddFloatingActionButton(
-            height: height,
-            width: width,
-            homeBloc: homeBloc,
+        return GestureDetector(
+          onTap: (){
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: Scaffold(
+            appBar: CustomAppBar(height: height),
+            resizeToAvoidBottomInset: false,
+            floatingActionButton: AddFloatingActionButton(
+              height: height,
+              width: width,
+              homeBloc: homeBloc,
+            ),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
+            bottomNavigationBar:
+                CustomBottomNavigationBar(homeBloc: homeBloc, width: width),
+            extendBody: true,
+            backgroundColor: ConstColors.scaffoldBackground,
+            body: ProjectSummary(),
           ),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-          bottomNavigationBar:
-              CustomBottomNavigationBar(homeBloc: homeBloc, width: width),
-          extendBody: true,
-          backgroundColor: ConstColors.scaffoldBackground,
         );
       },
     );

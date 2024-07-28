@@ -13,4 +13,8 @@ class AssPaths {
   static const selectedCalendar = 'assets/icons/selectedCalendar.svg';
   static const notification = 'assets/icons/notification.svg';
   static const ellipseRed = 'assets/icons/ellipseRed.svg';
+  static const searchNormal = 'assets/icons/search-normal.svg';
+  static const inProgress = 'assets/icons/in-progress.svg';
+  static const completed = 'assets/icons/completed.svg';
+  static const cancelled = 'assets/icons/cancelled.svg';
 }

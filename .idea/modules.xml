@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ringo.iml" filepath="$PROJECT_DIR$/ringo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/ringo_android.iml" filepath="$PROJECT_DIR$/android/ringo_android.iml" />
     </modules>
   </component>
 </project>
