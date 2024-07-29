@@ -31,4 +31,7 @@ class LangKeys {
   static const calendar = 'calendar';
   static const category = 'category';
   static const profile = 'profile';
+  static const schedule = 'schedule';
+  static const task = 'task';
+  static const chooseDate = 'chooseDate';
 }

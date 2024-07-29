@@ -4,6 +4,7 @@ import 'package:ringo/_base/widgets/base_stateful_widget.dart';
 import 'package:ringo/res/const_colors.dart';
 import 'package:ringo/ui/widgets/calendar/schedule_tab.dart';
 import 'package:ringo/ui/widgets/calendar/task_tab.dart';
+import 'package:ringo/util/lang/app_localization_keys.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class CalendarScreen extends BaseStatefulWidget {
@@ -54,11 +55,11 @@ class _CalendarScreenState extends BaseState<CalendarScreen>
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
                 color: ConstColors.secondaryText),
-            tabs: const [
+            tabs: [
               Tab(
-                text: 'Schedule',
+                text: translate(LangKeys.schedule),
               ),
-              Tab(text: 'Task'),
+              Tab(text: translate(LangKeys.task)),
             ],
           ),
           Expanded(
@@ -71,7 +72,11 @@ class _CalendarScreenState extends BaseState<CalendarScreen>
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    ScheduleTab(focusedDay: _focusedDay,height: height,width: width,),
+                    ScheduleTab(
+                      focusedDay: _focusedDay,
+                      height: height,
+                      width: width,
+                    ),
                     TaskTab(
                       focusedDay: _focusedDay,
                     ),
@@ -127,9 +132,9 @@ class _CalendarScreenState extends BaseState<CalendarScreen>
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   SizedBox(width: width / 10),
-                                  const Text(
-                                    'Choose Date',
-                                    style: TextStyle(
+                                  Text(
+                                    translate(LangKeys.chooseDate),
+                                    style: const TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -214,46 +219,25 @@ class _CalendarScreenState extends BaseState<CalendarScreen>
                                 startingDayOfWeek: StartingDayOfWeek.monday,
 
                                 daysOfWeekStyle: DaysOfWeekStyle(
-                                    weekdayStyle: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                        color: ConstColors.app),
-                                    weekendStyle: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                        color: ConstColors.app),
+                                    weekdayStyle: _calendarTextStyleEnabled(),
+                                    weekendStyle: _calendarTextStyleEnabled(),
                                     dowTextFormatter: (date, locale) =>
                                         DateFormat.EEEEE().format(date)),
-                                calendarStyle: const CalendarStyle(
-                                  defaultTextStyle: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16,
-                                      color: ConstColors.app),
-                                  selectedTextStyle: TextStyle(
+                                calendarStyle:  CalendarStyle(
+                                  defaultTextStyle: _calendarTextStyleEnabled(),
+                                  selectedTextStyle: const TextStyle(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 16,
                                       color: ConstColors.white),
-                                  weekendTextStyle: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16,
-                                      color: ConstColors.app),
-                                  disabledTextStyle: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16,
-                                      color: ConstColors.calendarDisabled),
-                                  outsideTextStyle: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16,
-                                      color: ConstColors.calendarDisabled),
-                                  selectedDecoration: BoxDecoration(
+                                  weekendTextStyle: _calendarTextStyleEnabled(),
+                                  disabledTextStyle: _calendarTextStyleDisabled(),
+                                  outsideTextStyle: _calendarTextStyleDisabled(),
+                                  selectedDecoration: const BoxDecoration(
                                     color: ConstColors.app,
                                     shape: BoxShape.circle,
                                   ),
-                                  todayTextStyle: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16,
-                                      color: ConstColors.app),
-                                  todayDecoration: BoxDecoration(
+                                  todayTextStyle: _calendarTextStyleEnabled(),
+                                  todayDecoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
                                 ),
@@ -357,6 +341,19 @@ class _CalendarScreenState extends BaseState<CalendarScreen>
     );
   }
 
+  TextStyle _calendarTextStyleDisabled(){
+    return const TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: 16,
+        color: ConstColors.calendarDisabled);
+  }
+  TextStyle _calendarTextStyleEnabled(){
+    return const TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: 16,
+        color: ConstColors.app);
+  }
+
   Widget _buildHorizontalCalendar() {
     int daysInMonth = getDaysInMonth(_focusedDay);
     return SizedBox(
@@ -421,8 +418,7 @@ class _CalendarScreenState extends BaseState<CalendarScreen>
 ///////////////////////////////////////////////////////////
 
   double calculateInitialOffset() {
-    return (_focusedDay.day - 1) *
-        52.0;
+    return (_focusedDay.day - 1) * 52.0;
   }
 
   void scrollToDay(int index) {

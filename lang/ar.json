@@ -30,5 +30,8 @@
   "projectSummary": "ملخص المشروع",
   "calendar": "التقويم",
   "category": "الفئات",
-  "profile": "الملف الشخصي"
+  "profile": "الملف الشخصي",
+  "schedule": "جدول",
+  "task": "مهمة",
+  "chooseDate": "اختر تاريخ"
 }

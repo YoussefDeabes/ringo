@@ -30,5 +30,8 @@
   "projectSummary": "Project Summary",
   "calendar": "Calendar",
   "category": "Category",
-  "profile": "Profile"
+  "profile": "Profile",
+  "schedule": "Schedule",
+  "task": "Task",
+  "chooseDate": "Choose Date"
 }
