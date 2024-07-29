@@ -7,6 +7,7 @@ class AssPaths {
   static const profile = 'assets/icons/profile.svg';
   static const profilePng = 'assets/icons/profile.png';
   static const category = 'assets/icons/category.svg';
+  static const selectedCategory = 'assets/icons/selectedCategory.svg';
   static const calendar = 'assets/icons/calendar.svg';
   static const project = 'assets/icons/project.svg';
   static const selectedProject = 'assets/icons/selectedProject.svg';

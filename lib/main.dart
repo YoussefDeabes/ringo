@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Ringo',
             theme: AppTheme(localeState).themeDataLight,
-            debugShowCheckedModeBanner: true,
+            debugShowCheckedModeBanner: false,
 
             /// the list of our supported locals for our app
             /// currently we support only 2 English, Arabic ...

@@ -13,7 +13,8 @@ class CustomBottomNavigationBar extends StatefulWidget {
       {super.key, required this.homeBloc, required this.width});
 
   @override
-  State<CustomBottomNavigationBar> createState() => _CustomBottomNavigationBarState();
+  State<CustomBottomNavigationBar> createState() =>
+      _CustomBottomNavigationBarState();
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
@@ -45,9 +46,19 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             IconButton(
-              icon: SvgPicture.asset(AssPaths.category,
-                  colorFilter:
-                      const ColorFilter.mode(ConstColors.app, BlendMode.srcIn)),
+              icon: BlocBuilder<HomeBloc, HomeState>(
+                builder: (context, state) {
+                  if (state is CategoryPageState) {
+                    return SvgPicture.asset(AssPaths.selectedCategory,
+                        colorFilter: const ColorFilter.mode(
+                            ConstColors.app, BlendMode.srcIn));
+                  } else {
+                    return SvgPicture.asset(AssPaths.category,
+                        colorFilter: const ColorFilter.mode(
+                            ConstColors.app, BlendMode.srcIn));
+                  }
+                },
+              ),
               onPressed: () {
                 widget.homeBloc.add(CategoryEvent());
               },
@@ -90,7 +101,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               },
             ),
             IconButton(
-              icon: Image.asset(AssPaths.profilePng),
+              icon: Image.asset(AssPaths.profilePng, scale: 0.9),
               onPressed: () {
                 widget.homeBloc.add(ProfileEvent());
               },

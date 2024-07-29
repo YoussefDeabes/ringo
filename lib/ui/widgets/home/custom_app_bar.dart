@@ -9,8 +9,19 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight + 40);
   final double height;
+  final String projectSummary;
+  final String calendar;
+  final String category;
+  final String profile;
 
-  const CustomAppBar({super.key, required this.height});
+  const CustomAppBar({
+    super.key,
+    required this.height,
+    required this.projectSummary,
+    required this.calendar,
+    required this.category,
+    required this.profile,
+  });
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -39,29 +50,15 @@ class _CustomAppBarState extends State<CustomAppBar> {
       title: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           if (state is ProjectPageState) {
-            return const Text(
-              "Project summary",
-              style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16,
-                  color: ConstColors.app),
-            );
+            return _getTitle(widget.projectSummary);
           } else if (state is CalendarPageState) {
-            return const Text(
-              "Calendar",
-              style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16,
-                  color: ConstColors.app),
-            );
+            return _getTitle(widget.calendar);
+          } else if (state is CategoryPageState) {
+            return _getTitle(widget.category);
+          } else if (state is ProfilePageState) {
+            return _getTitle(widget.profile);
           } else {
-            return const Text(
-              "",
-              style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16,
-                  color: ConstColors.app),
-            );
+            return _getTitle("");
           }
         },
       ),
@@ -90,6 +87,14 @@ class _CustomAppBarState extends State<CustomAppBar> {
           ),
         )
       ],
+    );
+  }
+
+  Widget _getTitle(String title) {
+    return Text(
+      title,
+      style: const TextStyle(
+          fontWeight: FontWeight.w700, fontSize: 16, color: ConstColors.app),
     );
   }
 }

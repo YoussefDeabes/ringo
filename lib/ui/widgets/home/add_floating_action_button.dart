@@ -29,7 +29,7 @@ class _AddFloatingActionButtonState extends State<AddFloatingActionButton> {
             scale: 1.2,
             child: FloatingActionButton(
               onPressed: () {
-                widget.homeBloc.add(AddEvent());
+                // widget.homeBloc.add(AddEvent());
               },
               child: const Icon(
                 Icons.add,

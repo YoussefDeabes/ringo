@@ -10,14 +10,19 @@ class ConstColors {
   static const Color shadowColor = Color(0xFFE8EAEE);
   static const Color blue = Color(0xFF5599F5);
   static const Color orange = Color(0xFFFD7722);
+  static const Color lightOrange = Color(0xFFFEDFCC);
   static const Color pink = Color(0xFFE84C88);
   static const Color green = Color(0xFF5ECEB3);
+  static const Color lightGreen = Color(0xFFEBF9F5);
   static const Color purple = Color(0xFFD08CDF);
+  static const Color lightPurple = Color(0xFFF9F1FB);
   static const Color grey = Color(0x191C2A1F);
   static const Color white = Colors.white;
 
   static const Color text = Color(0xFF191D2B);
   static const Color secondaryText = Color(0xFF96A0B5);
+  static const Color taskDue = Color(0xFF697896);
+  static const Color calendarDisabled = Color(0xFFD0D5DC);
   static const Color textDisabled = Color(0xFFE0E0E0);
   static const Color disabled = Color(0xFFE0E0E0);
   static const Color accent = Color(0xFF7FCED6);
