@@ -18,4 +18,6 @@ class AssPaths {
   static const inProgress = 'assets/icons/in-progress.svg';
   static const completed = 'assets/icons/completed.svg';
   static const cancelled = 'assets/icons/cancelled.svg';
+  static const logo = 'assets/images/ringo-logo.png';
+  static const logoFull = 'assets/images/ringo-logo-full.jpg';
 }

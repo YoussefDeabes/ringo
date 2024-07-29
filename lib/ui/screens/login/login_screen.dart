@@ -14,6 +14,7 @@ import 'package:ringo/ui/widgets/login/register_widget.dart';
 import 'package:ringo/ui/widgets/login/textfield_title.dart';
 import 'package:ringo/util/lang/app_localization_keys.dart';
 import 'package:ringo/util/ui/feedback_controller.dart';
+import 'package:ringo/util/ui/screen_controller.dart';
 
 class LoginScreen extends BaseStatefulWidget {
   static const routeName = '/login-screen';
@@ -32,6 +33,7 @@ class _LoginScreenState extends BaseState<LoginScreen> {
   @override
   void initState() {
     loginBloc.add(LoginInitialEvent());
+    exitFullScreen();
     super.initState();
   }
 

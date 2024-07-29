@@ -2,6 +2,7 @@ import 'package:ringo/bloc/lang/language_cubit.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:ringo/ui/screens/login/bloc/login_bloc.dart';
 import 'package:ringo/ui/screens/login/login_screen.dart';
+import 'package:ringo/ui/screens/splash/splash_screen.dart';
 import 'package:ringo/util/lang/app_localization.dart';
 import 'package:ringo/util/routes/routes.dart';
 import 'package:ringo/util/state_management/providers_manager.dart';
@@ -63,7 +64,7 @@ class MyApp extends StatelessWidget {
             /// Returns a locale which will be used by the app
             localeResolutionCallback: AppLocalizations.localeResolutionCallback,
             locale: localeState,
-            home: const LoginScreen(),
+            home: const SplashScreen(),
             routes: Routes.routes,
           );
         },
